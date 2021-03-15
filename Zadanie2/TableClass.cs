@@ -15,7 +15,33 @@ namespace Zadanie2
             { 
                 return tab[i,j]; 
             }
-            set { tab[i,j] = value; }
+            set 
+            {
+                try
+                {
+                    tab[i, j] = value;
+                }
+                catch
+                {
+                    if ((tab.GetLength(0) <= i) & (tab.GetLength(1) <= j))
+                    {
+                        setTabCapacity(i + 1, j + 1);
+                        tab[i, j] = value;
+                    }
+                    else if ( tab.GetLength(0) <= i )
+                    {
+                        setTabCapacity(i+1 , tab.GetLength(1));
+                        tab[i, j] = value;
+                    }
+                    else if ( tab.GetLength(1) <= j)
+                    {
+                        setTabCapacity(tab.GetLength(0), j + 1);
+                        tab[i, j] = value;
+                    }
+                    
+                }
+                 
+            }
         }
 
         public void setTabCapacity(int x, int y)

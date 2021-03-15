@@ -20,11 +20,13 @@ namespace Zadanie2
                     Console.WriteLine("");
                     Console.WriteLine("Insert table place you want to read:");
                     Console.WriteLine(array[askX(), askY()]);
-                    
                 }
                 else if(choice == 2)
                 {
                     Console.WriteLine("");
+                    Console.WriteLine("Insert table place you want to set:");
+                    array[askX(), askY()] = askValue();
+
                 }
                 else
                 {
@@ -40,6 +42,23 @@ namespace Zadanie2
 
         }
 
+        private static int askValue()
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.Write("Value");
+                    return Int32.Parse(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Choose integer");
+                    continue;
+                }
+            }
+        }
+
         private static int askX()
         {
             while (true)
@@ -49,7 +68,7 @@ namespace Zadanie2
                     Console.Write("X:");
                     return Int32.Parse(Console.ReadLine());
                 }
-                catch (Exception e)
+                catch
                 {
                     Console.WriteLine("Choose integer");
                     continue;
@@ -66,7 +85,7 @@ namespace Zadanie2
                     Console.Write("Y:");
                     return Int32.Parse(Console.ReadLine());
                 }
-                catch (Exception e)
+                catch
                 {
                     Console.WriteLine("Choose integer");
                     continue;
@@ -86,7 +105,7 @@ namespace Zadanie2
                     Console.WriteLine("2.Write");
                     return Int32.Parse(Console.ReadLine());
                 }
-                catch (Exception e)
+                catch
                 {
                     Console.WriteLine("Choose integer");
                     continue;
