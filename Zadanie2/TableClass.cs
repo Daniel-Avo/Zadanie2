@@ -25,17 +25,17 @@ namespace Zadanie2
                 {
                     if ((tab.GetLength(0) <= i) & (tab.GetLength(1) <= j))
                     {
-                        setTabCapacity(i + 1, j + 1);
+                        arrayRewriting(i + 1, j + 1);
                         tab[i, j] = value;
                     }
                     else if ( tab.GetLength(0) <= i )
                     {
-                        setTabCapacity(i+1 , tab.GetLength(1));
+                        arrayRewriting(i + 1, tab.GetLength(1));
                         tab[i, j] = value;
                     }
                     else if ( tab.GetLength(1) <= j)
                     {
-                        setTabCapacity(tab.GetLength(0), j + 1);
+                        arrayRewriting(tab.GetLength(0), j + 1);
                         tab[i, j] = value;
                     }
                     
@@ -48,5 +48,24 @@ namespace Zadanie2
         {
             tab = new int[x, y];
         }
+
+        private void arrayRewriting(int x, int y)
+        {
+            int[,] oldtab = tab;
+            tab = new int[x, y];
+            for (int i = 0; i < oldtab.GetLength(0)-1; i++)
+            {
+                for (int j = 0; j < oldtab.GetLength(1) - 1; j++)
+                {
+                    tab[i, j] = oldtab[i, j];
+                }
+            }
+        }
+
+        public void getTabCapacity()
+        {
+            Console.WriteLine("Tab[" + tab.GetLength(0) + "][" + tab.GetLength(1) + "]");
+        }
+      
     }
 }

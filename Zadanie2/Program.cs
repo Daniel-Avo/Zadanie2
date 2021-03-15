@@ -10,6 +10,7 @@ namespace Zadanie2
 
             TableClass array = new TableClass();
             array.setTabCapacity(askX(), askY());
+            array.getTabCapacity();
 
             while (true)
             {
@@ -18,12 +19,14 @@ namespace Zadanie2
                 if (choice == 1)
                 {
                     Console.WriteLine("");
+                    array.getTabCapacity();
                     Console.WriteLine("Insert table place you want to read:");
                     Console.WriteLine(array[askX(), askY()]);
                 }
                 else if(choice == 2)
                 {
                     Console.WriteLine("");
+                    array.getTabCapacity();
                     Console.WriteLine("Insert table place you want to set:");
                     array[askX(), askY()] = askValue();
 
