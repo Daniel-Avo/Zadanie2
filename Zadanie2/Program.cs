@@ -6,7 +6,11 @@ namespace Zadanie2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Enter array capacity:");
+            Console.Write("X:");
+            int x = Int32.Parse(Console.ReadLine());
+            Console.Write("Y:");
+            int y = Int32.Parse(Console.ReadLine());
         }
     }
 }
