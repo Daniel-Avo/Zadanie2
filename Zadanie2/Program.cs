@@ -11,14 +11,9 @@ namespace Zadanie2
             TableClass array = new TableClass();
             array.setTabCapacity(askX(), askY());
 
-            Console.WriteLine("");
-
             while (true)
             {
-                Console.WriteLine("Choose:");
-                Console.WriteLine("1.Read");
-                Console.WriteLine("2.Write");
-                int choice = Int32.Parse(Console.ReadLine());
+                int choice = askChoice();
 
                 if (choice == 1 | choice == 2)
                 {
@@ -26,6 +21,7 @@ namespace Zadanie2
                 }
                 else
                 {
+                    Console.WriteLine("");
                     Console.WriteLine("Choose 1 or 2");
                     continue;
                 }
@@ -39,14 +35,56 @@ namespace Zadanie2
 
         private static int askX()
         {
-            Console.Write("X:");
-            return Int32.Parse(Console.ReadLine());
+            while (true)
+            {
+                try
+                {
+                    Console.Write("X:");
+                    return Int32.Parse(Console.ReadLine());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Choose integer");
+                    continue;
+                }
+            }
         }
 
         private static int askY()
         {
-            Console.Write("Y:");
-            return Int32.Parse(Console.ReadLine());
+            while (true)
+            {
+                try
+                {
+                    Console.Write("Y:");
+                    return Int32.Parse(Console.ReadLine());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Choose integer");
+                    continue;
+                }
+            }
+        }
+
+        private static int askChoice()
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Choose:");
+                    Console.WriteLine("1.Read");
+                    Console.WriteLine("2.Write");
+                    return Int32.Parse(Console.ReadLine());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Choose integer");
+                    continue;
+                }
+            }
         }
     }
 }
