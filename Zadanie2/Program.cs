@@ -15,7 +15,14 @@ namespace Zadanie2
             {
                 int choice = askChoice();
 
-                if (choice == 1 | choice == 2)
+                if (choice == 1)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Insert table place you want to read:");
+                    Console.WriteLine(array[askX(), askY()]);
+                    
+                }
+                else if(choice == 2)
                 {
                     Console.WriteLine("");
                 }
